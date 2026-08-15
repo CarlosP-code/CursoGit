@@ -64,4 +64,5 @@ if __name__ == "__main__":
     print(f"Camas libres: {resultado['camas_libres']}")
     print(f"Estado de alerta: {resultado['estado_alerta']}")
 
-    print("Componente de métricas hospitalarias")
+    
+    print("Aprendiendo el flujo normal de Git")
