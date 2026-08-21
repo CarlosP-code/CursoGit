@@ -3,47 +3,28 @@ import pandas as pd
 
 def calcular_kpis_hospitalarios(df: pd.DataFrame) -> dict:
 
-    # ==========================================
-    # 1. OCUPACIÓN PROMEDIO
-    # ==========================================
-
+    # Ocupación promedio del hospital
     ocupacion_promedio_pct = (
         df["camas_ocupadas"].sum()
         / df["camas_totales"].sum()
     ) * 100
 
-
-    # ==========================================
-    # 2. COSTO TOTAL
-    # ==========================================
-
+    # Costo operativo total
     costo_total = df["costo_operativo_dia"].sum()
 
-
-    # ==========================================
-    # 3. CAMAS LIBRES
-    # ==========================================
-
+    # Camas libres
     camas_libres = (
         df["camas_totales"].sum()
         - df["camas_ocupadas"].sum()
     )
 
-
-    # ==========================================
-    # 4. ESTADO DE ALERTA
-    # ==========================================
-
+    # Estado de alerta
     if ocupacion_promedio_pct >= 85:
         estado_alerta = "CRÍTICO (Saturación)"
     else:
         estado_alerta = "Normal (Capacidad Estable)"
 
-
-    # ==========================================
-    # 5. DEVOLVER RESULTADOS
-    # ==========================================
-
+    # Devolver los resultados
     return {
         "ocupacion_promedio_pct": ocupacion_promedio_pct,
         "costo_total": costo_total,
