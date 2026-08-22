@@ -6,33 +6,21 @@ import pandas as pd
 from datos_hospital import hospitales
 from componente_metricas import calcular_kpis_hospitalarios
 
-
-# ==========================================
 # 1. CREAR DATAFRAME
-# ==========================================
 
 df = pd.DataFrame(hospitales)
 
-
-# ==========================================
 # 2. CALCULAR KPI
-# ==========================================
 
 kpis = calcular_kpis_hospitalarios(df)
 
-
-# ==========================================
 # 3. TÍTULO
-# ==========================================
 
 st.title("🏥 Dashboard Hospitalario")
 
 st.write("Sistema de análisis de ocupación hospitalaria")
 
-
-# ==========================================
 # 4. MOSTRAR LOS 4 KPI
-# ==========================================
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -56,9 +44,7 @@ col4.metric(
     kpis["estado_alerta"]
 )
 
-# ==========================================
 # 5. TABLA DE HOSPITALES
-# ==========================================
 
 st.subheader("Datos de los hospitales")
 
@@ -67,9 +53,7 @@ st.dataframe(df)
 st.write(df.columns.tolist())
 # st.bar_chart(df)
 
-# ==========================================
 # 6. GRÁFICA DE CAMAS
-# ==========================================
 
 st.subheader("Camas por hospital")
 
@@ -99,7 +83,6 @@ st.subheader("Costos operativos por hospital")
 st.bar_chart(df[["nombre", "costo_operativo_dia"]])
 
 # st.bar_chart(df[["hospital", "camas_ocupadas"]])
-
 
 st.write(df.columns)
 
