@@ -16,7 +16,7 @@ kpis = calcular_kpis_hospitalarios(df)
 
 # 3. TÍTULO
 
-st.title("🏥 Dashboard Hospitalario")
+st.title("Dashboard Hospitalario")
 
 st.write("Sistema de análisis de ocupación hospitalaria")
 
@@ -48,9 +48,8 @@ col4.metric(
 
 st.subheader("Datos de los hospitales")
 
-st.write(df)
 st.dataframe(df)
-st.write(df.columns.tolist())
+
 # st.bar_chart(df)
 
 # 6. GRÁFICA DE CAMAS
