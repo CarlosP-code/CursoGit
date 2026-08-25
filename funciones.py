@@ -41,3 +41,5 @@ def calcular_kpis_hospitalarios(df):
         "ocupacion_maxima": ocupacion_maxima,
         "estado": estado
     }
+
+print("Aprendiendo Git paso a paso")
